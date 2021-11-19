@@ -21,7 +21,7 @@ class SampleController(Resource):
                  description: Successful Randomization
                  content:
                    application/json:
-                     schema: SampleEndpointOutput
+                     schema: SampleModelSchema
                '500':
                  description: Internal server error
                  content:
