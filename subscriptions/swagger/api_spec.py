@@ -3,6 +3,7 @@ from apispec.ext.marshmallow import MarshmallowPlugin
 from apispec_webframeworks.flask import FlaskPlugin
 from subscriptions.swagger.schemas.sample_endpoint.request_schemas import SampleEndpointInput
 from subscriptions.swagger.schemas.sample_endpoint.response_schemas import SampleEndpointOutput, SampleEndpointError
+from subscriptions.models import SampleModel
 
 description_component = """
 This component is used for taking user defined input parameters and based on it produce a randomized list of integers.
@@ -20,6 +21,7 @@ spec = APISpec(
 
 # register schemas with spec
 spec.components.schema('SampleEndpointInput', schema=SampleEndpointInput)
+spec.components.schema('SampleModelSchema', schema=SampleModel.Schema)
 spec.components.schema('SampleEndpointOutput', schema=SampleEndpointOutput)
 spec.components.schema('SampleEndpointError', schema=SampleEndpointError)
 

@@ -15,7 +15,6 @@ with app.app_context():
         if func_name == "static":
             continue
         view_func = app.view_functions[func_name]
-        print("@@@@@@@", view_func)
         spec.path(view=view_func)
 
 
